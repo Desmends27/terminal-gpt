@@ -2,7 +2,7 @@
 """All main functions go here"""
 
 import json
-import os
+
 import openai
 
 try:

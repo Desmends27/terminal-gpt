@@ -21,3 +21,9 @@ class console(cmd.Cmd):
         print('Thank you for using chat')
         return True
     
+    def do_EOF(self, arg):
+        """Ctrl + C"""
+        print('Thank you for using chat')
+        return True
+
+    
