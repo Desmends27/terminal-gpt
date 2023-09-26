@@ -15,4 +15,7 @@ Terminal GPT is a command-line tool that leverages OpenAI's GPT (Generative Pre-
 
 ## Installation
 
+
 1. Clone this repository to your local machine:
+ ```shell
+   git clone https://github.com/desmends27/terminal-gpt.git
