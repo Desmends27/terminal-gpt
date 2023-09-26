@@ -1,27 +1,33 @@
 #!/bin/bash
 
-if [ "$(id -u)" != "0" ]; then
-    echo "You need to run as root"
-    exit 1
-fi
+# Install Python 3 and pip
+sudo apt-get update
+sudo apt-get install -y python3 python3-pip
 
-GPT="main.py"
-GPT_DOC="README.md"
+# Install the OpenAI Python package using pip
+pip3 install openai
 
-APP_PATH="/opt/gpt"
-BIN_PATH="/usr/local/bin"
+# Prompt the user for the API key
+read -p "Enter API key: " api_key
 
-echo -e "Installing"
+# Define the installation directory
+install_dir="/usr/local/bin/terminal_gpt"
 
-mkdir -p "${APP_PATH}"
+# Create the installation directory
+sudo mkdir -p "$install_dir"
 
-cp "${GPT}" "${APP_PATH}/${GPT}"
-cp "${GPT_DOC}" "${APP_PATH}/${GPT_DOC}"
+# Create a file called password.txt in the installation directory and store the API key
+echo "$api_key" | sudo tee "$install_dir/password.txt" > /dev/null
 
-chmod +x "${APP_PATH}/${GPT}"
-chmod +x "${APP_PATH}/${GPT_DOC}"
+# Copy the necessary files to the installation directory
+sudo cp -r ./{README.md,__pycache__,main.py,packages} "$install_dir"
 
-ln -s "${APP_PATH}/${GPT}" "${BIN_PATH}/${GPT}"
-ln -s "${APP_PATH}/${GPT_DOC}" "${BIN_PATH}/${GPT_DOC}"
+# Create a symbolic link to main.py in /usr/local/bin/ with the name 'gpt'
+sudo ln -s "$install_dir/main.py" "/usr/local/bin/gpt"
 
-echo -e "done"
+# Change permissions to make main.py executable
+sudo chmod +x "$install_dir/main.py"
+
+# Display a message indicating successful installation
+echo "terminal gpt has been installed."
+echo "You can now run 'gpt' from anywhere in the terminal."
