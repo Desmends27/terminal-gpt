@@ -13,7 +13,7 @@ Terminal GPT is a command-line tool that leverages OpenAI's GPT (Generative Pre-
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
-##installation
+#installation
 
 
 1. Clone this repository to your local machine:
