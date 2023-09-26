@@ -17,5 +17,41 @@ Terminal GPT is a command-line tool that leverages OpenAI's GPT (Generative Pre-
 
 
 1. Clone this repository to your local machine:
- ```shell
-   git clone https://github.com/desmends27/terminal-gpt.git
+ ```
+   https://github.com/Desmends27/terminal-gpt.git
+```
+2. Navigate to the project directory
+     ```
+     cd terminal-gpt
+    ```
+3. Run the installation script:
+        ```
+           ./install.sh
+    ```
+Follow the prompts to install Python 3, pip, and the necessary dependencies. You'll also be asked to enter your API key for OpenAI, which will be securely stored for future use.
+
+##Usage
+You can generate text using Terminal GPT by simply typing:
+  ```
+    gpt Your input sentence here
+  ```
+##Additional OptionsTerminal GPT supports the following additional options:
+
+--loop: Start an interactive console session where you can input multiple sentences and receive responses interactively. Type exit to exit the console session.
+```
+  gpt --loop
+```
+
+--clear: Clear the conversation history and start fresh.
+```
+gpt --clear
+```
+Note: Clearing the conversation history will remove all previous inputs and outputs.
+
+
+##Contributing
+Contributions to Terminal GPT are welcome! Feel free to open issues, submit pull requests, or provide feedback to help improve this tool.
+
+
+##Acknowledgments
+This project uses OpenAI's GPT-3 model. Visit OpenAI for more information.
