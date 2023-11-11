@@ -29,5 +29,5 @@ sudo ln -s "$install_dir/main.py" "/usr/local/bin/gpt"
 sudo chmod +x "$install_dir/main.py"
 
 # Display a message indicating successful installation
-echo "terminal gpt has been installed."
+echo "Terminal gpt has been installed."
 echo "You can now run 'gpt' from anywhere in the terminal."
